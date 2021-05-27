@@ -1,3 +1,4 @@
+./setup_env
 mkdir actions-runner
 cd actions-runner
 curl -o actions-runner-linux-x64-2.278.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.278.0/actions-runner-linux-x64-2.278.0.tar.gz
