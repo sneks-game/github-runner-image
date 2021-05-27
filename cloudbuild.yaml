@@ -1,3 +1,15 @@
+- name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "Deploying and building branch $BRANCH_NAME @ $REPO_NAME... "
+        sed -i 's|_GITHUB_TOKEN|$_GITHUB_TOKEN|g' setup_env.sh
+        sed -i 's|_IMAGE_NAME|$_IMAGE_NAME|g' setup_env.sh
+        sed -i 's|_PROJECT_ID|$_PROJECT_ID|g' setup_env.sh
+        sed -i 's|_REPO_PATH|$_REPO_PATH|g' setup_env.sh
+        cat setup_env.sh
+
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [ 'builds', 'submit', '--tag', 'gcr.io/$_PROJECT_ID/$_IMAGE_NAME' ]
