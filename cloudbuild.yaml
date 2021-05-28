@@ -10,7 +10,8 @@ steps:
         sed -i 's|_IMAGE_NAME|$_IMAGE_NAME|g' setup_env.sh
         sed -i 's|_PROJECT_ID|$_PROJECT_ID|g' setup_env.sh
         sed -i 's|_REPO_PATH|$_REPO_PATH|g' setup_env.sh
-        sed -i 's|__GITHUB_REPO__|$_REPO_PATH|g' Dockerfile
+        sed -i 's|__REPO_PATH__|$_REPO_PATH|g' Dockerfile
+        sed -i 's|__GITHUB_TOKEN__|$_GITHUB_TOKEN|g' Dockerfile
         cat setup_env.sh
         cat Dockerfile
 
